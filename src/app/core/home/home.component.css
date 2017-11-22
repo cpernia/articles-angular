@@ -1,0 +1,10 @@
+:host {
+  display: flex;
+  flex-basis: 100%;
+}
+.route-container {
+  position: relative;
+}
+.route-container > * {
+  display: block;
+}

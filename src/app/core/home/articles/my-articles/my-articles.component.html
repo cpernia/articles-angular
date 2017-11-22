@@ -1,0 +1,53 @@
+<div class="route-name-wrapper">
+  <span>My Articles </span>
+  <span *ngIf="user">Hello, {{ user.email }}</span>
+</div>
+<div style="display: none" *ngIf="myArticles.length > 0 && myArticles != null; then showMyArticles else noMyArticles"></div>
+<ng-template #noMyArticles>
+  <h4>You don't have articles yet!</h4>
+</ng-template>
+<ng-template #showMyArticles>
+  <h4>Click an article to edit</h4>
+  <ul id="articles-wrapper">
+    <li class="card-wrapper"
+        *ngFor="let article of myArticles; let i = index"
+        (click)="toEdit(article.id)"
+    >
+      <div class="card-small shadowed-card">
+        <div class="card-img">
+          <img src="{{ article.imgPath }}" alt="">
+        </div>
+        <div class="card-content">
+          <div class="card-date-by">
+            <span></span>
+            <span>{{ article.date | date:'shortDate' }}</span>
+          </div>
+          <div class="card-title">
+            <h3>{{ article.title | subText:98 }}</h3>
+          </div>
+          <div class="card-resume">
+            <p>{{ article.resume | subText:195 }}</p>
+          </div>
+        </div>
+        <div class="card-category-wrapper">
+          <div class="card-divider">
+            <div>
+              <hr noshade>
+            </div>
+            <div>
+              <span class="dot dot-{{ article.category | lowercase }}"></span>
+            </div>
+          </div>
+          <div class="card-category">
+            <span>{{ article.category }}</span>
+          </div>
+        </div>
+      </div>
+    </li>
+  </ul>
+</ng-template>
+<div class="add-article-wrapper">
+  <button routerLink="/articles/new" class="btn btn-green btn-auto">
+    Add Article <i class="fa fa-plus"></i>
+  </button>
+</div>

@@ -1,1 +1,232 @@
 /* You can add global styles to this file, and also import other style files */
+@font-face {
+  font-family: body-font;
+  src: url('./assets/fonts/SourceSansPro-Regular.ttf');
+}
+@font-face {
+  font-family: source-sans-light;
+  src: url('./assets/fonts/SourceSansPro-Light.ttf');
+}
+h1, h2, h3, h4, h5, h6, p {
+  margin: 0;
+  padding: 0;
+}
+html, body, main{
+  height: 100%;
+  width: 100%;
+  color: #5B5B5B;
+}
+select {
+  height: 38px;
+  color: #6b6b6b;
+}
+select:hover {
+  cursor: pointer;
+}
+body {
+  margin: 0;
+  display: flex;
+  flex-flow: row nowrap;
+  font-family: 'body-font';
+}
+ul {
+  list-style: none;
+  padding-left: 0;
+}
+a {
+  text-decoration: none;
+  color: white;
+}
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+hr {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  border-style: inset;
+  border: 0;
+  height: 1px;
+  background-color: #d5d5d5;
+}
+/*COVER DIV*/
+#cover {
+  display: none;
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+/*CONTENT WRAPPER*/
+#content-wrapper {
+  height: calc(100% - 52px);
+  overflow-y: auto;
+  overflow-x: hidden;
+  background: url("./assets/img/articlesBackground.png"); /* For browsers that do not support gradients */
+  background-repeat: no-repeat;
+  background-position: 95% 90%;
+  padding: 30px;
+}
+/*CATEGORY DOTS*/
+.dot {
+  display: block;
+  height: 25px;
+  width: 25px;
+  border-radius: 50%;
+  margin: 0 auto;
+  color: white;
+  position: relative;
+}
+.dot:after {
+  font-family: FontAwesome;
+  font-size: 15px;
+  position: absolute;
+}
+.dot-environment {
+  background-color: #7fdd86;
+}
+.dot-environment:after {
+  top: 5px;
+  left: 5px;
+  content: "\f06c";
+}
+.dot-politics {
+  background-color: #4b60c6;
+}
+.dot-politics:after {
+  top: 5px;
+  left: 4.5px;
+  content: "\f0c0";
+}
+.dot-sports {
+  background-color: #efa536;
+}
+.dot-sports:after {
+  top: 5px;
+  left: 5px;
+  content: "\f1e3";
+}
+.dot-travel {
+  background-color: #bea1ed;
+}
+.dot-travel:after {
+  top: 5.5px;
+  left: 7px;
+  content: "\f072";
+}
+.dot-food {
+  background-color: #ed6056;
+}
+.dot-food:after {
+  top: 5px;
+  left: 6.5px;
+  content: "\f0f5";
+}
+.dot-education {
+  background-color: #96b5ed;
+}
+.dot-education:after {
+  top: 5px;
+  left: 5.5px;
+  content: "\f02d";
+}
+.dot-health {
+  background-color: #ed3734;
+}
+.dot-health:after {
+  top: 4.5px;
+  left: 6px;
+  content: "\f0fe";
+}
+.dot-technology {
+  background-color: #00d5ed;
+}
+.dot-technology:after {
+  top: 5.5px;
+  left: 4px;
+  content: "\f085";
+}
+.dot-entertainment {
+  background-color: #edd708;
+}
+.dot-entertainment:after {
+  top: 5px;
+  left: 5.5px;
+  content: "\f005";
+}
+.dot-art {
+  background-color: #8e69ed;
+}
+.dot-art:after {
+  top: 5px;
+  left: 5.5px;
+  content: "\f1fc";
+}
+/*BORDER AND SHADOW FOR CARDS*/
+.shadowed-card {
+  border: 1px solid #E2E2E2;
+  -webkit-box-shadow: 0px 9px 27px -7px rgba(161,161,161,1);
+  -moz-box-shadow: 0px 9px 27px -7px rgba(161,161,161,1);
+  box-shadow: 0px 9px 27px -7px rgba(161,161,161,1);
+}
+/*ROUTE WRAPPER*/
+.route-name-wrapper {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  padding-bottom: 30px;
+}
+.route-name-wrapper span:nth-child(2) {
+  font-family: 'source-sans-light';
+}
+.btn {
+  cursor: pointer;
+  padding: 12px 10px;
+  border: 0 none;
+  letter-spacing: 1px;
+  border-radius: 5px;
+  width: 70px;
+}
+.btn-auto {
+  width: auto;
+}
+.btn:focus, .btn:active:focus, .btn.active:focus {
+  outline: 0 none;
+}
+.btn-submit {
+  background: #d87171;
+  color: #ffffff;
+}
+.btn-cancel {
+  background: #fc2727;
+  color: #ffffff;
+  margin-right: 5px;
+}
+.btn-green {
+  background: #29fc5c;
+  color: #ffffff;
+  margin-right: 5px;
+}
+button[disabled] {
+  background-color: #d7d7d7 !important;
+  color: #3F3F3F !important;
+}
+.highlight-input-error {
+  border-color: red !important;
+}
+@media screen and (max-width: 600px) {
+  #cover.show {
+    display: block;
+  }
+  #content-wrapper {
+    padding: 10px 20px;
+  }
+  .btn {
+    display: block;
+    width: 100%;
+    margin: 10px 0;
+  }
+}
