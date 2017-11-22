@@ -1,8 +1,0 @@
-<app-side-bar></app-side-bar>
-<main>
-  <div id="cover" [class.show]="showCover" (click)="hideSideBar()"></div>
-  <app-top-bar></app-top-bar>
-  <div id="content-wrapper" class="route-container" [@routeAnimation]="getDepth(myOutlet)">
-    <router-outlet #myOutlet="outlet" ></router-outlet>
-  </div>
-</main>
